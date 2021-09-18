@@ -6,6 +6,19 @@
 </head>
 <body>
 <p>reminder: how to link a js file to an html file. use the script tag in the body. script src="/js/file-name.js"</p>
+<p>push adds to the end. pop removes from the end and returns the removed item.</p>
+<p>JavaScript arrays have a forEach method that can be used as an alternative to a for loop.
+
+</p>
+<p>The forEach method on an array takes another function as a parameter and doesn't
+    have a return value. The function passed to <strong>forEach</strong> takes in up to 3 parameters:
+    <strong>element</strong>, <strong>index</strong>, and the <strong>array</strong> itself.
+    We can refer to the function passed to .forEach as a callback function. The callback function will be called for every item in the array.</p>
+<p>Naming convention for arrays: use a plural word for the array, and a singular word for each item
+in the array.</p>
+<blockquote> shapes.forEach(function(shape) {
+            console.log('Here is a lovely shape: ' + shape + '.');
+});</blockquote>
 
 <script src="/js/array-refresher.js">
 </script>
