@@ -18,3 +18,10 @@ var shapes = ['square', 'rectangle', 'circle', 'triangle'];
 shapes.forEach(function(shape) {
     console.log('Here is a lovely shape: ' + shape + '.');
 });
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.toString());
+console.log(fruits.join(":)"))
+
+const points = [40, 100, 1, 5, 25, 10];
+console.log(points.sort(function(a, b){return a - b}));
