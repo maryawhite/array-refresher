@@ -151,3 +151,34 @@ function tpChecker (object){
  *       }
  *    ]) ➞ [5, 5, 4]
  */
+
+// Good news! I caught a bunch of FISH, and I got them in my truck:
+
+var fish1 = { type: "channel catfish", sizeInches: 18, locationCaught: "Lions Park", color: "blue"};
+
+var fish2 = { type: "channel catfish", sizeInches: 19, locationCaught: "Lions Park", color: "blue"};
+
+var fish3 = { type: "redfish", sizeInches: 22, locationCaught: "Braunig Lake", color: "red"};
+
+var fish4 = { type: "redfish", sizeInches: 29, locationCaught: "Braunig Lake", color: "red"};
+
+var kensCatch = [fish1, fish2, fish3, fish4];
+
+
+// Also, well, I caught these - don't ask me where:
+
+var sewerFish1 = { type: "tropical and unknown", sizeInches: 6, locationCaught: "sewer", color: "green"};
+
+var sewerFish2 = { type: "tropical and unknown", sizeInches: 3, locationCaught: "sewer", color: "blue"};
+
+var strangeCatch = [sewerFish1, sewerFish2];
+
+// Bad news - I need some help with knowing what all I caught!
+// Write a function named fishingWeekend that takes in an array of fish objects.
+// fishingWeekend() will alert me with three seperate alerts from that array of fish objects:
+// 1. First, program an alert letting me know if I caught a red fish, blue fish, both, or neither in my catch [my array].
+// 2. Second, an alert letting me know the average sizes of the total number of fish I caught [“That totals up to 4 fish with an average length of 22 inches.“];
+// 3. An alert letting me know if I got any catfish [“You caught some catfish tonight!“]
+// HINT: Do NOT try to do all of these in one go.
+// Write your function out incrementally, one alert at a time, piece by piece to eventually combine into the larger function desired.
+// Happy fishing!
