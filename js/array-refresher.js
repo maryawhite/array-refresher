@@ -86,11 +86,11 @@ console.log(removeDuplicates(["dog", "dog", "dog", "cat"]));  //["dog", "cat"]
  * >> mapping(["a", "b", "c"]) ➞ { "a": "A", "b": "B", "c": "C" }
  * >> mapping(["a", "v", "y", "z"]) ➞ { "a": "A", "v": "V", "y": "Y", "z": "Z" }
 */
- function mapping (input){
+ function mapping (array){
      var myObj = {};
-     for(var i = 0; i < input.length; i++) {
-         var key = input[i];
-         var value = key.toUpperCase();
+     for(var i = 0; i < array.length; i++) {
+         var key = array[i];
+         var value = array[i].toUpperCase();
          myObj = key + value;
      }
     return myObj;
@@ -181,4 +181,20 @@ var strangeCatch = [sewerFish1, sewerFish2];
 // 3. An alert letting me know if I got any catfish [“You caught some catfish tonight!“]
 // HINT: Do NOT try to do all of these in one go.
 // Write your function out incrementally, one alert at a time, piece by piece to eventually combine into the larger function desired.
-// Happy fishing!
+function fishingWeekend (array){
+    if (array.color === "blue"){
+        alert("you got a blue fish");
+    }
+    if(array.color === "red"){
+        alert("you got a red fish");
+    }
+    if (array.color !== "blue" && array.color !== "red"){
+        alert("the fish is neither red nor blue");
+    }
+}
+console.log(fishingWeekend(fish1));
+console.log(fishingWeekend(fish2));
+console.log(fishingWeekend(fish3));
+console.log(fishingWeekend(fish4));
+
+
