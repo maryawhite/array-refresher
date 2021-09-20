@@ -73,22 +73,38 @@ console.log(removeDuplicates(["The", "big", "cat"]));        //["The", "big", "c
 console.log(removeDuplicates(["John", "Taylor", "John"]));   //["John", "Taylor"]
 console.log(removeDuplicates(["dog", "dog", "dog", "cat"]));  //["dog", "cat"]
 
-function mapping ([array]){
-    var obj = {};
-    for(var i = 0; i < array.length; i++) {
-        obj = {i: array[i].toUpperCase()};
-    }
-    return obj;
+
+//write a function that takes an array and returns the lower case letter: uppercase letter
+/**
+ * Lowercase and Uppercase Map
+ * Create a function named mapping that creates an object with each (key, value) pair being the (lower case, upper case)
+ * versions of a letter, respectively.
+ *
+ * Examples
+ *
+ * >> mapping(["p", "s"]) ➞ { "p": "P", "s": "S" }
+ * >> mapping(["a", "b", "c"]) ➞ { "a": "A", "b": "B", "c": "C" }
+ * >> mapping(["a", "v", "y", "z"]) ➞ { "a": "A", "v": "V", "y": "Y", "z": "Z" }
+*/
+ function mapping (input){
+     var myObj = {};
+     for(var i = 0; i < input.length; i++) {
+         var key = input[i];
+         var value = key.toUpperCase();
+         myObj = key + value;
+     }
+    return myObj;
 }
 
 console.log(mapping(["p", "s"]));
-console.log(mapping(["a", "b", "c"]));
+//key: value  arrays[arrays[i].toUpperCase()]
 
 /**
  * Can You Spare a Square?
  * Try to imagine a world in which you might have to stay home for 14 days at any given time. Do you have enough TP to make it through?
  *
- * Although the number of squares per roll of TP varies significantly, we'll assume each roll has 500 sheets, and the average person uses 57 sheets per day.
+ * Although the number of squares per roll of TP varies significantly,
+ * we'll assume each roll has 500 sheets, and the average person uses 57 sheets per day.
  *
  * Create a function named tpChecker that will receive an object with two key/values:
  *
@@ -103,7 +119,12 @@ console.log(mapping(["a", "b", "c"]));
  * >> tpChecker({ people: 3, tp: 20 }) ➞ "Your TP will last 58 days, no need to panic!"
  * >> tpChecker({ people: 4, tp: 12 }) ➞ "Your TP will last 26 days, no need to panic!"
  */
+function tpChecker (object){
+    // //one person uses 57 sheets/day. 500 sheets per roll
+    // var usage = object.people * 57;
+    // var rolls = object.tp * 500;
 
+}
 
 /**
  * Get Student Top Notes
@@ -130,4 +151,3 @@ console.log(mapping(["a", "b", "c"]));
  *       }
  *    ]) ➞ [5, 5, 4]
  */
-
