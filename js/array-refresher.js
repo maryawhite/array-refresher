@@ -9,14 +9,14 @@ var shapes = ['square', 'rectangle', 'circle', 'triangle'];
 
 // loop through the array and log the values
 for (var i = 0; i < shapes.length; i++) {
-    console.log('The shape at index ' + i + ' is: ' + shapes[i]);
+	console.log('The shape at index ' + i + ' is: ' + shapes[i]);
 }
 
 var shapes = ['square', 'rectangle', 'circle', 'triangle'];
 
 // loop through the array and log the values
 shapes.forEach(function(shape) {
-    console.log('Here is a lovely shape: ' + shape + '.');
+	console.log('Here is a lovely shape: ' + shape + '.');
 });
 
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -57,13 +57,13 @@ console.log(removed);
  */
 
 function removeDuplicates(items){
-    var newArray = [];            //declare a new array
-    for(var i = 0; i < items.length; i++){
-        if(newArray.indexOf(items[i]) === -1){     //checking if the new Array has the old arrays items.
-            newArray.push(items[i]);
-        }
-    }
-    return newArray;    //return outside of the for loop or it will stop.
+	var newArray = [];            //declare a new array
+	for(var i = 0; i < items.length; i++){
+		if(newArray.indexOf(items[i]) === -1){     //checking if the new Array has the old arrays items.
+			newArray.push(items[i]);
+		}
+	}
+	return newArray;    //return outside of the for loop or it will stop.
 }
 //indexOf() returns -1 if the item is not found.
 console.log("--remove duplicates--");
@@ -87,13 +87,13 @@ console.log(removeDuplicates(["dog", "dog", "dog", "cat"]));  //["dog", "cat"]
  * >> mapping(["a", "v", "y", "z"]) ➞ { "a": "A", "v": "V", "y": "Y", "z": "Z" }
 */
  function mapping (array){
-     var myObj = {};
-     for(var i = 0; i < array.length; i++) {
-         var key = array[i];
-         var value = array[i].toUpperCase();
-         myObj = key + value;
-     }
-    return myObj;
+	 var myObj = {};
+	 for(var i = 0; i < array.length; i++) {
+		 var key = array[i];
+		 var value = array[i].toUpperCase();
+		 myObj = key + value;
+	 }
+	return myObj;
 }
 
 console.log(mapping(["p", "s"]));
@@ -120,9 +120,9 @@ console.log(mapping(["p", "s"]));
  * >> tpChecker({ people: 4, tp: 12 }) ➞ "Your TP will last 26 days, no need to panic!"
  */
 function tpChecker (object){
-    // //one person uses 57 sheets/day. 500 sheets per roll
-    // var usage = object.people * 57;
-    // var rolls = object.tp * 500;
+	// //one person uses 57 sheets/day. 500 sheets per roll
+	// var usage = object.people * 57;
+	// var rolls = object.tp * 500;
 
 }
 
@@ -182,19 +182,85 @@ var strangeCatch = [sewerFish1, sewerFish2];
 // HINT: Do NOT try to do all of these in one go.
 // Write your function out incrementally, one alert at a time, piece by piece to eventually combine into the larger function desired.
 function fishingWeekend (array){
-    if (array.color === "blue"){
-        alert("you got a blue fish");
-    }
-    if(array.color === "red"){
-        alert("you got a red fish");
-    }
-    if (array.color !== "blue" && array.color !== "red"){
-        alert("the fish is neither red nor blue");
-    }
+	if (array.color === "blue"){
+		alert("you got a blue fish");
+	}
+	if(array.color === "red"){
+		alert("you got a red fish");
+	}
+	if (array.color !== "blue" && array.color !== "red"){
+		alert("the fish is neither red nor blue");
+	}
 }
-console.log(fishingWeekend(fish1));
-console.log(fishingWeekend(fish2));
-console.log(fishingWeekend(fish3));
-console.log(fishingWeekend(fish4));
+// console.log(fishingWeekend(fish1));
+// console.log(fishingWeekend(fish2));
+// console.log(fishingWeekend(fish3));
+// console.log(fishingWeekend(fish4));
+
+//youtube Dave Gray Arrays in Javascript
+// const myArray = [];
+// myArray[0] = "Dave";
+// myArray[1] = 1001;
+// myArray[2] = "ford";
+// console.log(myArray);
+
+//last element in an array
+// console.log(myArray[myArray.length -1]); //this prints the thing that is the last item, which is false in this example.
+// console.log(myArray.length - 1); //this prints the length...2
+// myArray.push("school");
+// console.log(myArray);
+// myArray.pop();
+// console.log(myArray);
+// var popped = myArray.pop();
+// console.log(popped + " is removed");
+// console.log(myArray);
+// myArray.unshift("Mary", "Sarah");
+// console.log(myArray);
+// myArray.splice(0, 1, "Maria"); //splice can be used to delete and insert items
+// console.log(myArray);
+
+// var abcArray = ["A", "B", "C", "D", "E", "F"];
+// var newAbc = abcArray.slice(2);  //slice returns a new array
+// console.log(newAbc);
+// // console.log(abcArray.reverse());
+// console.log(abcArray.join(",")); //join turns the array into a string separated by commas or the delimiter of your choice
+// var newString = abcArray.join(",");
+// console.log(newString);
+// var anotherArray = newString.split(",");
+// console.log(anotherArray);
+//
+// var namesArray = ["dog", "cat", "bird", "horse", "mouse"];
+// var namesString = namesArray.join(" ");
+// console.log(namesString);
+// var namesArrayB = namesString.split(" "); //split turns a string into an array
+// console.log(namesArrayB);
+
+var myArrayA = ["A", "B", "C"];
+var myArrayB = ["X", "Y", "Z"];
+
+var newArray = myArrayA.concat(myArrayB);
+console.log(newArray);
+var spreadOper = [...myArrayA, ...myArrayB]; //the spread operator is a newer way to concatenate 2 arrays
+console.log(spreadOper);
+
+//nested Arrays
+var equipShelfA = ["baseball", "football", "volleyball"];
+var equipShelfB = ["basketballs", "golf balls", "tennis balls"];
+
+var clothesShelfA = ["tank tops", "t-shirts", "jerseys"];
+var clothesShelfB = ["sweat tops", "sweat pants", "hoodies"];
+
+var equipDept = [equipShelfA, equipShelfB];
+var clothesDept = [clothesShelfA, clothesShelfB];
+
+var sportsStore = [equipDept, clothesDept];
+
+console.log(sportsStore[0][0][1]); //this will find index 0 of sportsStore, then index 0 of the equipDept, then index 1 of equipShelfA, which football.
+console.log(sportsStore[1][1][0]);
+
+
+
+
+
 
 
