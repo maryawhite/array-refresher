@@ -258,6 +258,86 @@ var sportsStore = [equipDept, clothesDept];
 console.log(sportsStore[0][0][1]); //this will find index 0 of sportsStore, then index 0 of the equipDept, then index 1 of equipShelfA, which football.
 console.log(sportsStore[1][1][0]);
 
+let arr = [{
+	firstName: "Steven",
+	lastName: "Hancock",
+	score: 90
+}, {
+	firstName: "Lynette",
+	lastName: "Jorgensen",
+	score: 100
+}, {
+	firstName: "Andrew",
+	lastName: "Wilson",
+	score: 71
+}, {
+	firstName: "Ann",
+	lastName: "Turner",
+	score: 82
+}];
+
+//sort the array of objects by lastName using a callback function -1, 1, or 0
+// arr.sort(function(a, b) {
+// 	if (a.lastName.toLowerCase() < b.lastName.toLowerCase()  //this is a shortened version of the if statement. no curly braces if there's only 1 if statement
+// 	) return -1;  //if the first should come before the second, return a neg numb
+// 	if (a.lastName.toLowerCase() > b.lastName.toLowerCase()
+// 	) return 1;
+// 	return 0;  //you don't have to type out the full statement...
+// });
+// console.log(arr);
+
+//now sort by score, lowest score to highest score
+arr.sort(function(a, b) {
+	return a.score - b.score  //if b is larger than a it will return a neg num.
+});
+console.log(arr);
+
+//create an object with new
+var obj1 = new Object();   //new is a keyword
+console.log(obj1);
+
+//create an object literal
+var obj2 = {};
+
+//create an object Object.create
+var obj3 = Object.create(null);  //null is no prototype?
+
+//define a property using . dot notation
+obj3.firstName = "Mary";
+console.log(obj3);
+
+var user1 = {
+	firstName: "James",
+	lastName: "Heywood",
+	levelsComplete: [1,2,3],
+	fullName: function(){
+		return this.firstName + " " + this.lastName;
+	},
+	startDate: new Date("January 1, 2017")
+};
+
+//access arrays on an object
+console.log(user1.levelsComplete[0]);  //will log 1 because 1 is the thing at index 0
+
+//add to the array
+user1.levelsComplete.push(4); //this will add the number 4 to the end of the array in the object
+
+//access the function that's in the object
+console.log(user1.fullName());
+
+//use bracket notation instead of dot notation, remember to use "" in the bracket
+console.log(user1["firstName"]);
+console.log(user1["levelsComplete"]);
+console.log(user1["first" + "Name"]);
+var fName = "fullName";
+//invoke the fullname method...the variable is an expression
+console.log(user1[fName]());
+
+
+
+
+
+
 
 
 
