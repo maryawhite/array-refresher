@@ -2,8 +2,8 @@
 let sequence = [1, 2, 3];
 sequence.push(4);
 sequence.push(5);
-console.log(sequence);
-console.log(sequence.pop()); //returns 5 bc it returns what you popped off
+// console.log(sequence);
+// console.log(sequence.pop()); //returns 5 bc it returns what you popped off
 
 var shapes = ['square', 'rectangle', 'circle', 'triangle'];
 
@@ -12,24 +12,24 @@ for (var i = 0; i < shapes.length; i++) {
 	console.log('The shape at index ' + i + ' is: ' + shapes[i]);
 }
 
-var shapes = ['square', 'rectangle', 'circle', 'triangle'];
-
-// loop through the array and log the values
-shapes.forEach(function(shape) {
-	console.log('Here is a lovely shape: ' + shape + '.');
-});
+// var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+//
+// // loop through the array and log the values
+// shapes.forEach(function(shape) {
+// 	console.log('Here is a lovely shape: ' + shape + '.');
+// });
 
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
-console.log(fruits.toString());
-console.log(fruits.join(":)"));
+// console.log(fruits.toString());
+// console.log(fruits.join(":)"));
 
-var planets = ["Mercury", "Venus", "Earth"];
-planets.push("Mars");
-console.log(planets);
-planets[planets.length] = "Jupiter";
-console.log(planets);
-planets.unshift("Saturn");
-console.log(planets);
+// var planets = ["Mercury", "Venus", "Earth"];
+// planets.push("Mars");
+// console.log(planets);
+// planets[planets.length] = "Jupiter";
+// console.log(planets);
+// planets.unshift("Saturn");
+// console.log(planets);
 
 const points = [40, 100, 1, 5, 25, 10];
 console.log(points.sort(function(a, b){return a - b}));
@@ -89,15 +89,18 @@ console.log(removeDuplicates(["dog", "dog", "dog", "cat"]));  //["dog", "cat"]
  function mapping (array){
 	 var myObj = {};
 	 for(var i = 0; i < array.length; i++) {
-		 var key = array[i];
-		 var value = array[i].toUpperCase();
-		 myObj = key + value;
+		 // var key = array[i];
+		 // var value = array[i].toUpperCase();
+		 // myObj = key + value;
+		 myObj[array[i]] = array[i].toUpperCase();
 	 }
 	return myObj;
 }
 
 console.log(mapping(["p", "s"]));
-//key: value  arrays[arrays[i].toUpperCase()]
+console.log(mapping(["a", "b", "c"]));
+console.log(mapping(["a", "v", "y", "z"]));
+
 
 /**
  * Can You Spare a Square?
