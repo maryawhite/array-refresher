@@ -72,35 +72,58 @@ console.log(totalPets([{name: "Mary", pets : 5}, {name: "Sarah", pets : 10}, {na
  * convertToNumber({ piano: "200", tv: "300" }) ➞ { piano: 200, tv: 300 }
  * convertToNumber({ piano: "200", tv: "300", stereo: "400" }) ➞ {piano: 200, tv: 300, stereo: 400 }
  */
+function convertToNumber(object){
+    var result = Object.entries(object);
+    for(var i = 0; i < object.length; i++){  //object.length is undefined
+        result = parseInt(object[i].value)
+        console.log(object[i].value);
+    }
+    return result;
+}
+
+//FOR LOOP does not work on Objects
+    // function convertToNumber(object){
+    // var result = {}
+    // for(var i = 0; i < object.length; i++){  //object.length is undefined
+    //     result = parseInt(object[i].value)
+    //     console.log(object[i].value);
+    //
+    // }
+    // return result;
+    // }
+
+
 // function convertToNumber(input){
 //     for(var key in input){
 //         var result = key + ": " + input[key];
 //     }
 //     return result;
 // }
-function convertToNumber(object){
-    var result = "";
-    for (var key in object){
-        result += key + ":" + object[key];
-    }
-    return result;
-    }
+
+    // function convertToNumber(object){
+    // var result = "";
+    // for (var key in object){
+    //     result += key + ": " + object[key] + " ";
+    // }
+    // return result;
+    // }
 
     console.log(convertToNumber({piano: "200"}));
     console.log(convertToNumber({piano: "200", tv: "300"}));
     console.log(convertToNumber({piano: "200", tv: "300", stereo: "400"}));
 
 
-    var user = {
-    name : "John",
-    email : "john.doe@example.com",
-    age : "25"
-};
+//     var user = {
+//     name : "John",
+//     email : "john.doe@example.com",
+//     age : "25"
+// };
+//
+// for (var key in user){
+//     console.log(`${key}: ${user[key]}`);
+//     console.log(key + ": " + user[key]);
+// }
 
-for (var key in user){
-    console.log(`${key}: ${user[key]}`);
-    console.log(key + ": " + user[key]);
-}
 
 
 
