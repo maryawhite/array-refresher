@@ -16,10 +16,23 @@
 *
 * Examples
 *
-* >> convertAddressToObject('8626 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+* >> convertAddressToObject('8626 Sunny Oaks') ➞ {streetNumber: '8626', streetName: 'Sunny Oaks'}
 * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
 */
+function convertAddressToObject(input){
+//indexOf returns the first occurrence
+    var space = input.indexOf(" ");
+    var numbers = input.slice(0, space);             //this will slice out the beginning to the first space
+    var street = input.slice(space, (input.length));
+    street = street.trim();                          //trim out extra space
+    return {streetNumber : numbers,
+            streetName: street};
+}
 
+console.log(convertAddressToObject('8626 Sunny Oaks'));
+console.log(convertAddressToObject('5408 Villa Nueva'));
+console.log(convertAddressToObject("1600 Pennsylvania Ave"));
+console.log(convertAddressToObject("1 First Avenue NE"));
 
 /**
 * Count total pets
@@ -33,6 +46,64 @@
 *       {name: 'Kenneth Howell', pets: 2}
 *    ]) ➞ 11
 */
+function totalPets(input){
+    var sum = 0;
+    for(var i = 0; i < input.length; i++){
+        sum += input[i].pets;
+    }
+    return sum;
+}
+console.log(totalPets([
+                   {name: 'Fernando Mendoza', pets: 1},
+               {name: 'Douglas Hirsh', pets: 8},
+           {name: 'Kenneth Howell', pets: 2}
+       ]));
+
+console.log(totalPets([{name: "Mary", pets : 5}, {name: "Sarah", pets : 10}, {name: "Olge", pets : 30}]));
+
+/***
+ * * Burglary Series (06): Convert to Number
+ * You prepare a list to send to the insurance company. As you finish, you notice you misformatted it.
+ * Write a function named convertToNumber that takes in an object with at least one key/value pair, convert all the values to numbers.
+ *
+ * Examples
+ *
+ * convertToNumber({ piano: "200" }) ➞ { piano: 200 }
+ * convertToNumber({ piano: "200", tv: "300" }) ➞ { piano: 200, tv: 300 }
+ * convertToNumber({ piano: "200", tv: "300", stereo: "400" }) ➞ {piano: 200, tv: 300, stereo: 400 }
+ */
+// function convertToNumber(input){
+//     for(var key in input){
+//         var result = key + ": " + input[key];
+//     }
+//     return result;
+// }
+function convertToNumber(object){
+    var result = "";
+    for (var key in object){
+        result += key + ":" + object[key];
+    }
+    return result;
+    }
+
+    console.log(convertToNumber({piano: "200"}));
+    console.log(convertToNumber({piano: "200", tv: "300"}));
+    console.log(convertToNumber({piano: "200", tv: "300", stereo: "400"}));
+
+
+    var user = {
+    name : "John",
+    email : "john.doe@example.com",
+    age : "25"
+};
+
+for (var key in user){
+    console.log(`${key}: ${user[key]}`);
+    console.log(key + ": " + user[key]);
+}
+
+
+
 </script>
 </body>
 </html>
