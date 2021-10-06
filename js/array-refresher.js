@@ -336,8 +336,146 @@ var fName = "fullName";
 //invoke the fullname method...the variable is an expression
 console.log(user1[fName]());
 
+//* Find the Smallest and Biggest Numbers
+//  * Create a function named minMax that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+//  *
+//  * Examples
+//  * >> minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+//  * >> minMax([2334454, 5]) ➞ [5, 2334454]
+//  * >> minMax([1]) ➞ [1, 1]
+//  *
+//  * Notes
+//  * All test arrays will have at least one element and are valid.
+//  */
+function minMax(input){
+	var sorted = input.sort(function(a, b){return a - b;})
+	var min = sorted[0];
+	var max = sorted[input.length - 1];
+	return [min, max];
+}
+console.log(minMax([1, 2, 3, 4, 5]));
+console.log(minMax([2334454, 5]));
+console.log(minMax([1]));
+console.log(minMax([21, 3]));
+
+/**
+ * Drink Sorting
+ * You will be given an array of drinks, with each drink being an object with two properties: name and price.
+ * Create a function named sortDrinkByPrice that has the drinks array as an argument and return the drinks objects sorted by price in ascending order.
+ *
+ * Assume that the following array of drink objects needs to be sorted:
+ * drinks = [
+ *     {name: "lemonade", price: 50},
+ *     {name: "lime", price: 10}
+ * ]
+ *
+ * Examples
+ * >> sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
+ */
+function sortDrinksByPrice(input){
+	var result = input.sort(function(a, b){return a.price - b.price;})
+	return result;
+}
+console.log(sortDrinksByPrice([{name: "lemonade", price: 50}, {name: "lime", price: 10}]));
 
 
+function sumDrinks (input){
+	var sum = 0;
+	for(var i = 0; i < input.length; i++){
+		sum += input[i].price
+	}
+	return sum;
+}
+console.log(sumDrinks([{name: "lemonade", price: 50}, {name: "lime", price: 10}]));
+
+///**
+//  * Scrabble Hand
+//  * Given an array of scrabble tiles, create a function that outputs the maximum possible score a player can achieve by summing up the total number of points for all the tiles in their hand. Each hand contains 7 scrabble tiles.
+//  *
+//  * Here's an example hand:
+//  *
+//  * [
+//  *      { tile: "N", score: 1 },
+//  *      { tile: "K", score: 5 },
+//  *      { tile: "Z", score: 10 },
+//  *      { tile: "X", score: 8 },
+//  *      { tile: "D", score: 2 },
+//  *      { tile: "A", score: 1 },
+//  *      { tile: "E", score: 1 }
+//  * ]
+//  *
+//  * The players maximumScore from playing all these tiles would be 1 + 5 + 10 + 8 + 2 + 1 + 1, or 28.
+function maximumScore(input){
+	var sum = 0;
+	for (var i = 0; i < input.length; i++){
+		sum += input[i].score;
+	}
+	return sum;
+}
+
+console.log(maximumScore([
+	{tile: "N", score: 1},
+	{tile: "K", score: 5},
+	{tile: "Z", score: 10},
+	{tile: "X", score: 8},
+	{tile: "D", score: 2},
+	{tile: "A", score: 1},
+	{tile: "E", score: 1}
+]));
+
+///**
+//  * Array of Multiples
+//  * Create a function named arrayOfMultiples that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
+//  *
+//  * Examples
+//  *
+//  * >> arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+//  * >> arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+//  * >> arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
+//  *
+//  * Notes
+//  * Notice that num is also included in the returned array.
+//  */
+function arrayOfMultiples(num, length){
+	var result = [];
+	for (var i = 1; i <= length; i++){
+		result.push(num * i);
+	}
+	return result;
+}
+console.log(arrayOfMultiples(7, 5));
+console.log(arrayOfMultiples(12, 10));
+
+///**
+//  * Get Sum of People's Budget
+//  * Create the function named getBudgets that takes an array with objects and returns the sum of people's budgets.
+//  *
+//  * Examples
+//  *
+//  * >> getBudgets([
+//  *        { name: "John", age: 21, budget: 23000 },
+//  *        { name: "Steve",  age: 32, budget: 40000 },
+//  *        { name: "Martin",  age: 16, budget: 2700 }
+//  *    ]) ➞ 65700
+//  * >> getBudgets([
+//  *        { name: "John",  age: 21, budget: 29000 },
+//  *        { name: "Steve",  age: 32, budget: 32000 },
+//  *        { name: "Martin",  age: 16, budget: 1600 }
+//  *    ]) ➞ 62600
+//  */
+function getBudgets(input){
+	var sum = 0;
+	for(var i = 0; i < input.length; i++){
+		sum += input[i].budget
+	}
+	return sum;
+}
+
+console.log(getBudgets([
+	{name: "John", age: 21, budget: 23000},
+	{name: "Steve", age: 32, budget: 40000},
+	{name: "Martin", age: 16, budget: 2700}
+]));
 
 
 
